@@ -45,7 +45,7 @@ function Board() {
 
     function moveDirection(coord, dir, lastDir){
         if(!isInGame) return
-        console.log(headCoords)
+        const headCoords = getHeadCoords(table)
         if(table[coord[0]][coord[1]] == 2){
             if(table[[coord[0]+dir[0]]][[coord[1]+dir[1]]] == 1){
                 gameLose()
