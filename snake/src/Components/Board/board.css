@@ -1,0 +1,10 @@
+.board{
+    position: absolute;
+    width: 680px;
+    height: 640px;
+    top: calc(50vh - 300px);
+    right: calc(50vw - 340px);
+    display: grid;
+    grid-template-columns: repeat(17, 1fr);
+    grid-template-rows: repeat(15, 1fr);
+}
