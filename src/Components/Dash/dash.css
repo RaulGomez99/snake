@@ -1,0 +1,38 @@
+.dash{
+    position: absolute;
+    top: 0%;
+    right: 0%;
+    width: 100%;
+    height: 70px;
+    background-color: #28590b;
+}
+
+.close{
+    position: absolute;
+    cursor: pointer;
+    color: white;
+    font-size: 20px;
+    right: 20px;
+    top: 15px;
+}
+
+.apples{
+    position: absolute;
+    top: 15px;
+    left: 20px;
+    font-size: 25px;
+    color: white;
+}
+
+.apples::before{
+    background-image: url('../../../img/apple.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 25px 25px;
+    display: inline-block;
+    width: 25px; 
+    height: 25px;
+    padding-right: 5px;
+    content:"";
+
+}

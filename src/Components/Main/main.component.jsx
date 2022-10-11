@@ -6,11 +6,15 @@ function Main() {
 
     const [playBoard, setPlayboard] = useState(false)
 
+    function close(){
+        setPlayboard(false)
+    }
+
     return (
         <div className='main'>
             {playBoard ? <div>
                 <div className='back' />
-                <Board key={"Board"} />
+                <Board key={"Board"} close = {close}/>
             </div> : <div>
                 <button onClick={() => setPlayboard(true)}>Play</button>
             </div>}

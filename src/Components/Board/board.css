@@ -1,9 +1,9 @@
 .game{
     position: absolute;
-    top: 40px;
-    right: 40px;
-    width: 680px;
-    height: 600px;
+    top: 100px;
+    right: 30px;
+    width: 595px;
+    height: 525px;
     display: grid;
     grid-template-columns: repeat(17, 1fr);
     grid-template-rows: repeat(15, 1fr);
@@ -11,10 +11,10 @@
 
 .board{
     position: absolute;
-    width: 760px;
-    height: 680px;
-    top: calc(50vh - 340px);
-    right: calc(50vw - 380px);
+    width: 655px;
+    height: 655px;
+    top: calc(50vh - 327.5px);
+    right: calc(50vw - 292.5px);
     background-color: #038410;
     display: flex;
 }

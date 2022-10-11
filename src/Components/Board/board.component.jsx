@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import Cell from '../Cell/cell.component'
+import Dash from '../Dash/dash.component'
+import Loose from '../Loose/loose.component'
 import './board.css';
 let movement
 let move = [0, 1]
 let lastDir = [0, 1]
 let isInGame = false
-let loose = false
-function Board() {
+function Board({ close }) {
     // 1 snake body, 2 snake head, 3 apple
     const updateMoves = () => {
         console.log("Creating movement")
@@ -19,7 +20,10 @@ function Board() {
     useEffect(() => {
         updateMoves()
 
-        //return () => clearInterval(movement)
+        return () => {
+            clearInterval(movement)
+            movement = null
+        }
     }, [])
 
     useEffect(() => {
@@ -28,6 +32,8 @@ function Board() {
         return () => document.removeEventListener("keydown", changeMovement)
     })
 
+    const [apples, setApples] = useState(0)
+    const [loose, setLoose] = useState(false)
     const [table, setTable] = useState(
         [
             [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
@@ -114,8 +120,8 @@ function Board() {
 
     function moveDirection(coord, dir) {
         if (!isInGame) return
-        if (coord[0] + dir[0] < 0 || coord[0] + dir[0] > table.length ||
-            coord[1] + dir[1] < 0 || coord[1] + dir[1] > table[coord[0] + dir[0]].length) {
+        if (coord[0] + dir[0] < 0 || coord[0] + dir[0] >= table.length ||
+            coord[1] + dir[1] < 0 || coord[1] + dir[1] >= table[coord[0] + dir[0]].length) {
             gameLose()
         }
         if (table[coord[0]][coord[1]] == 1) {
@@ -130,6 +136,7 @@ function Board() {
                 setTable(subTable)
             } else if (table[[coord[0] + dir[0]]][[coord[1] + dir[1]]] == -1) {
                 let subTable = [...table]
+                setApples(apples => apples+1)
                 subTable = sumNumbers(subTable)
                 subTable[[coord[0] + dir[0]]][[coord[1] + dir[1]]] = 1
                 lastDir = dir
@@ -139,20 +146,22 @@ function Board() {
         }
     }
 
-
+    function pause() {
+        isInGame = false
+    }
 
     function gameLose() {
         isInGame = false
-        loose = true
-        alert("Perdiste")
+        setLoose(true)
     }
     return (
         <div className='board'>
-
+            <Dash close={close} pause = {pause} num = {apples}/>
             <div className='game'>
                 {table.map((row, i) => (
                     row.map((cell, j) => (<Cell coords={[i, j]} boardValue={cell} />))
                 ))}
+                {loose ? <Loose num = {apples}/> : null}
             </div>
         </div>
     );

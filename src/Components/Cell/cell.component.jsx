@@ -3,19 +3,19 @@ import './cell.css';
 
 function Cell({ coords, boardValue }) {
     function getColor(coords, boardValue) {
-        if (boardValue == 0) {
-            return (coords[0] + coords[1] * 15) % 2 == 0 ? "cell even"
-                : "cell odd"
-        }else if(boardValue > 1){
-            return "cell body"
-        }else if(boardValue == 1){
-            return "cell head"
-        }else if(boardValue == -1){
-            return "cell apple"
+        let text = (coords[0] + coords[1] * 15) % 2 == 0 ? "cell even"
+            : "cell odd"
+        if (boardValue > 1) {
+            text += " body"
+        } else if (boardValue == 1) {
+            text += " head"
+        } else if (boardValue == -1) {
+            text += " apple"
         }
+        return text
     }
     return (
-        <div className={ getColor(coords, boardValue) }>
+        <div className={getColor(coords, boardValue)}>
 
         </div>
     );
