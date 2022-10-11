@@ -13,7 +13,7 @@ function Board() {
         movement = movement ? movement : setInterval(() => {
             console.log("Moving..." + move[0] + ":" + move[1])
             moveDirection(getHeadCoords(table, 1), move)
-        }, 100)
+        }, 200)
     }
 
     useEffect(() => {
