@@ -1,15 +1,19 @@
 import React, { useState } from 'react';
 import Board from '../Board/board.component'
+import './main.css'
 
 function Main() {
 
     const [playBoard, setPlayboard] = useState(false)
 
     return (
-        <div>
-            <h1>Prueba</h1>
-            <button onClick={()=>setPlayboard(true)}>Play</button>
-            {playBoard ? <Board key = {"Board"}/> : null}
+        <div className='main'>
+            {playBoard ? <div>
+                <div className='back' />
+                <Board key={"Board"} />
+            </div> : <div>
+                <button onClick={() => setPlayboard(true)}>Play</button>
+            </div>}
         </div>
     );
 }

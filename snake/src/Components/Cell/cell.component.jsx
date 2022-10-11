@@ -6,11 +6,11 @@ function Cell({ coords, boardValue }) {
         if (boardValue == 0) {
             return (coords[0] + coords[1] * 15) % 2 == 0 ? "cell even"
                 : "cell odd"
-        }else if(boardValue == 1){
+        }else if(boardValue > 1){
             return "cell body"
-        }else if(boardValue == 2){
+        }else if(boardValue == 1){
             return "cell head"
-        }else if(boardValue == 3){
+        }else if(boardValue == -1){
             return "cell apple"
         }
     }

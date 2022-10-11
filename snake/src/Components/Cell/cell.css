@@ -1,3 +1,7 @@
+.cell{
+    transition: all;
+}
+
 .even{
     background-color: #58F925;
 }
