@@ -20,7 +20,7 @@
 
 .apple{
     /*background-color: #c31717;*/
-    background-image: url("../../../img/apple.png");
+    background-image: url("../../img/apple.png");
     background-size: 35px 35px;
     content:"";
 }

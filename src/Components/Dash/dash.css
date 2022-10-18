@@ -25,7 +25,29 @@
 }
 
 .apples::before{
-    background-image: url('../../../img/apple.png');
+    background-image: url('../../img/apple.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 25px 25px;
+    display: inline-block;
+    width: 25px; 
+    height: 25px;
+    padding-right: 5px;
+    content:"";
+
+}
+
+
+.record{
+    position: absolute;
+    top: 15px;
+    left: 80px;
+    font-size: 25px;
+    color: white;
+}
+
+.record::before{
+    background-image: url('../../img/trophy.png');
     background-position: center;
     background-repeat: no-repeat;
     background-size: 25px 25px;

@@ -6,7 +6,7 @@ function Main() {
 
     const [playBoard, setPlayboard] = useState(false)
 
-    function close(){
+    function close() {
         setPlayboard(false)
     }
 
@@ -14,9 +14,24 @@ function Main() {
         <div className='main'>
             {playBoard ? <div>
                 <div className='back' />
-                <Board key={"Board"} close = {close}/>
+                <Board key={"Board"} close={close} />
             </div> : <div>
-                <button onClick={() => setPlayboard(true)}>Play</button>
+                <div class="btn-box">
+                    <div className='box-flex'>
+                        <a href='#' className='btn btn-white btn-animate'
+                            onClick={() => setPlayboard(true)}>
+                            <div><span className='textButton'>Play</span></div>
+                        </a>
+                        <a href='#' className='btn btn-white btn-animate'
+                            onClick={() => setPlayboard(true)}>
+                            <span className='textButton'>Records</span>
+                        </a>
+                        <a href='#' className='btn btn-white btn-animate'
+                            onClick={() => setPlayboard(true)}>
+                            <span className='textButton'>Settings</span>
+                        </a>
+                    </div>
+                </div>
             </div>}
         </div>
     );

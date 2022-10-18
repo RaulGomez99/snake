@@ -1,31 +1,77 @@
+.looseBackground{
+    position: fixed;
+    top: 0px;
+    right: 0px;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0,0,0,0.8);
+}
+
 .loose{
     position: absolute;
-    height: 200px;
-    width: 200px;
+    height: 400px;
+    width: 300px;
     border-radius: 10px;
     border: solid 1px #2e3a2d;
-    background-color: #418d4f;
-    top: calc(100% - 100px);
-    right: calc(100% - 100px);
+    background-image: url('../../img/loosepanel.png');
+    background-color: #4dc1f9;
+    top: 10px;
+    left: 150px;
+}
+
+.looseImage{
+    width: 70px;
+    height: 70px;
+}
+
+
+.scores{
+    width: 200px;
+    height: 160px;
+    margin: 0 auto;
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    z-index: 10;
+    /*display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;*/
+}
+
+.scores *{
+    align-self: center;
+    justify-self: center;
 }
 
 .apples_loose{
-    position: absolute;
-    top: 15px;
-    left: 20px;
-    font-size: 25px;
+    font-size: 50px;
     color: white;
+    align-self: start;
 }
 
-.apples_loose::before{
-    background-image: url('../../../img/apple.png');
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: 25px 25px;
-    display: inline-block;
-    width: 25px; 
-    height: 25px;
-    padding-right: 5px;
-    content:"";
+.buttons{
+    margin-top: 77%;
+    width: 100%;
+}
 
+.button{
+    width: 100%;
+    height: 50px;
+    border: 1px solid black;
+    border-radius: 10px;
+    background-color: #15c;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+
+
+.button img{
+    margin-left: -15px;
 }

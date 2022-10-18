@@ -1,7 +1,9 @@
+import { useCookies } from 'react-cookie';
 import './dash.css'
 
 function Dash({ close, pause, num }) {
 
+    const [cookies, setCookie] = useCookies(['bestScore']);
 
     return (
         <div className='dash'>
@@ -10,6 +12,9 @@ function Dash({ close, pause, num }) {
                 close()
             }}>X</span>
             <span className='apples'>{num}</span>
+            {cookies.bestScore ? <span className='record'>{
+                cookies.bestScore < num ? num : cookies.bestScore
+            }</span> : null}
         </div>
     );
 }
