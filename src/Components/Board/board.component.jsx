@@ -8,7 +8,7 @@ let move
 let lastDir
 let isInGame
 let initing
-function Board({ close }) {
+function Board({ close, epilepsia }) {
 
     function init() {
         initing = true
@@ -202,7 +202,7 @@ function Board({ close }) {
             <Dash close={close} pause={pause} num={apples} />
             <div className='game'>
                 {table.map((row, i) => (
-                    row.map((cell, j) => (<Cell coords={[i, j]} boardValue={cell} />))
+                    row.map((cell, j) => (<Cell coords={[i, j]} boardValue={cell} epilepsia={epilepsia}/>))
                 ))}
                 {loose ? <Loose num={apples} init={init} /> : null}
             </div>

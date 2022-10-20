@@ -1,5 +1,7 @@
 .cell{
     transition: all;
+    width: 100%;
+    height: 100%;
 }
 
 .even{
@@ -8,6 +10,28 @@
 
 .odd{
     background-color: #54D829;
+}
+
+
+
+.red{
+    background-color: #fa3c3c;
+}
+
+.yellow{
+    background-color: #f2f45d;
+}
+
+.purple{
+    background-color: #8f6684;
+}
+
+.pink{
+    background-color: #fc7ccf;
+}
+
+.orange{
+    background-color: #f39450;
 }
 
 .body{
